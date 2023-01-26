@@ -1,6 +1,6 @@
 {
   "name": "wetube",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "BBanlgang Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖",
   "main": "src/server.js",
   "repository": {
@@ -23,6 +23,7 @@
   "homepage": "https://github.com/rtscts0987/wetube#readme",
   "dependencies": {
     "express": "^4.18.2",
+    "morgan": "^1.10.0",
     "pug": "^3.0.2"
   },
   "devDependencies": {

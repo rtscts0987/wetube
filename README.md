@@ -1,5 +1,5 @@
 # wetube
-## 빨강's wetube v0.0.0
+## 빨강's wetube v0.0.1
 Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
 
 1.사용자 인증(로그인 / 계정 만들기)
@@ -57,9 +57,63 @@ index.js -> src/server.js
 
 # 1.사용자 인증(로그인 / 계정 만들기)
  ## - "/" home
+  > /
+    ```JavaScript
+    const handleHome = (req, res) => res.send("Home");
+    app.use("/", handleHome);
+    ```
+  > Middleware
+    ```JavaScript
+    const middleware = (req, res) =>{
+        next();
+    }
+    const handleHome = (req, res) => res.send("Home");
+    app.use("/", middleware, handleHome);
+    ```
+  > 라우터
+    ```JavaScript
+    const userRouter = express.Router();
+    const handleEditUser = (req, res) => res.send("Edit User");
+    userRouter.get("/edit", handleEditUser);
+    ```
+   각 라우터마다 파일생성
+    src/globalRouter.js
+    src/videoRouter.js
+    src/userRouter.js
+
+    ```JavaScript
+    import express from "express";
+    const userRouter = express.Router();
+    const handleEditUser = (req, res) => res.send("Edit User");
+    userRouter.get("/edit", handleEditUser);
+    export default userRouter;
+    ```
+
+   각 컨트롤별 get메소드 추가
+
+    ```JavaScript
+    const handleJoin = (req, res) => res.send("Join");
+    globalRouter.get("/join", handleJoin);
+    ```
+
  ## - "/join" Join
+   > src/globalRouter.js
+    ```JavaScript
+    const handleJoin = (req, res) => res.send("Join");
+    globalRouter.get("/join", handleJoin);
+    ```
  ## - "/login" Login
+   > src/globalRouter.js
+    ```JavaScript
+    const handleLogin = (req, res) => res.send("Login");
+    globalRouter.get("/login", handleLogin);
+    ```
  ## - "/search" Search
+   > src/globalRouter.js
+    ```JavaScript
+    const handleSearch = (req, res) => res.send("Search");
+    globalRouter.get("/search", handleSearch);
+    ```
 
 # 2.프로필 편집 / 암호 변경
  ## - "users/edit" Edit user
