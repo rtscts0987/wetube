@@ -1,11 +1,11 @@
 import express from "express";
-import { handleHome, handleJoin, handleLogin, handleSearch } from "../controllers/globalController";
+import { home, join, login, search } from "../controllers/globalController";
 
 const globalRouter = express.Router();
 
-globalRouter.get("/", handleHome);
-globalRouter.get("/join", handleJoin);
-globalRouter.get("/login", handleLogin);
-globalRouter.get("/search", handleSearch);
+globalRouter.get("/", home);
+globalRouter.get("/join", join);
+globalRouter.get("/login", login);
+globalRouter.get("/search", search);
 
 export default globalRouter;

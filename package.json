@@ -1,6 +1,6 @@
 {
   "name": "wetube",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "BBanlgang Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖",
   "main": "src/server.js",
   "repository": {

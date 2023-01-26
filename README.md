@@ -1,5 +1,5 @@
 # wetube
-## 빨강's wetube v0.0.1
+## 빨강's wetube v0.0.2
 Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
 
 1.사용자 인증(로그인 / 계정 만들기)
@@ -9,6 +9,8 @@ Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
  - "/search" Search
 
 2.프로필 편집 / 암호 변경
+ - "users/:id" See User
+ - "users/logout" Log Out
  - "users/edit" Edit user
  - "users/delete" Delete user
 
@@ -19,10 +21,13 @@ Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
  - "/videos/search" Video Search
 
 5.동영상 편집
- - "/videos/edit" Video Edit
+ - "/videos/id:/edit" Video Edit
+
+5-1.동영상 삭제
+ - "/videos/id:/delete" Video Delete
 
 6.동영상 보기
- - "/videos/watch" Video Watch
+ - "/videos/id:" Video See
 
 7.Javascript 비디오 플레이어
  - 6.확장
@@ -57,12 +62,12 @@ index.js -> src/server.js
 
 # 1.사용자 인증(로그인 / 계정 만들기)
  ## - "/" home
-  > /
+  - /
     ```JavaScript
     const handleHome = (req, res) => res.send("Home");
     app.use("/", handleHome);
     ```
-  > Middleware
+  - Middleware
     ```JavaScript
     const middleware = (req, res) =>{
         next();
@@ -70,13 +75,13 @@ index.js -> src/server.js
     const handleHome = (req, res) => res.send("Home");
     app.use("/", middleware, handleHome);
     ```
-  > 라우터
+  - 라우터
     ```JavaScript
     const userRouter = express.Router();
     const handleEditUser = (req, res) => res.send("Edit User");
     userRouter.get("/edit", handleEditUser);
     ```
-   각 라우터마다 파일생성
+    각 라우터마다 파일생성
     src/globalRouter.js
     src/videoRouter.js
     src/userRouter.js
@@ -97,19 +102,19 @@ index.js -> src/server.js
     ```
 
  ## - "/join" Join
-   > src/globalRouter.js
+   - src/globalRouter.js
     ```JavaScript
     const handleJoin = (req, res) => res.send("Join");
     globalRouter.get("/join", handleJoin);
     ```
  ## - "/login" Login
-   > src/globalRouter.js
+   - src/globalRouter.js
     ```JavaScript
     const handleLogin = (req, res) => res.send("Login");
     globalRouter.get("/login", handleLogin);
     ```
  ## - "/search" Search
-   > src/globalRouter.js
+   - src/globalRouter.js
     ```JavaScript
     const handleSearch = (req, res) => res.send("Search");
     globalRouter.get("/search", handleSearch);
