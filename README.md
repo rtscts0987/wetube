@@ -1,6 +1,11 @@
 # wetube
-## 빨강's wetube v0.0.2
-Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
+## 빨강's wetube v0.0.3
+## Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
+
+### 0.0.3 pug + MVP CSS - 2023.01.26 // "-" 대한 README.md 기능확인 동그라미 점으로 표시됨
+### 0.0.2 rout - 2023.01.26 // ">" 대한 README.md 기능확인 ">"이후의 글은 왼쪽에 줄이 생김
+### 0.0.1 Default Express - 2023.01.26
+### 0.0.0 init - 2023.01.26
 
 1.사용자 인증(로그인 / 계정 만들기)
  - "/" home
@@ -49,7 +54,7 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
     "presets":["@babel/preset-env"]
 }
 ```
-index.js -> src/server.js
+### index.js -> src/server.js
 
 ### config.json
 ```json
@@ -59,15 +64,18 @@ index.js -> src/server.js
     "dev": "nodemon --exec babel-node src/server.js"
   }
 ```
+### HTML을 위한 pug설치
+### npm i pug
+
 
 # 1.사용자 인증(로그인 / 계정 만들기)
  ## - "/" home
-  - /
+   ### /
     ```JavaScript
     const handleHome = (req, res) => res.send("Home");
     app.use("/", handleHome);
     ```
-  - Middleware
+   ### Middleware
     ```JavaScript
     const middleware = (req, res) =>{
         next();
@@ -75,16 +83,16 @@ index.js -> src/server.js
     const handleHome = (req, res) => res.send("Home");
     app.use("/", middleware, handleHome);
     ```
-  - 라우터
+   ### 라우터
     ```JavaScript
     const userRouter = express.Router();
     const handleEditUser = (req, res) => res.send("Edit User");
     userRouter.get("/edit", handleEditUser);
     ```
-    각 라우터마다 파일생성
-    src/globalRouter.js
-    src/videoRouter.js
-    src/userRouter.js
+   ###  각 라우터마다 파일생성
+   ###  src/globalRouter.js
+   ###  src/videoRouter.js
+   ###  src/userRouter.js
 
     ```JavaScript
     import express from "express";
@@ -94,7 +102,7 @@ index.js -> src/server.js
     export default userRouter;
     ```
 
-   각 컨트롤별 get메소드 추가
+   ### 각 컨트롤별 get메소드 추가
 
     ```JavaScript
     const handleJoin = (req, res) => res.send("Join");
@@ -102,19 +110,19 @@ index.js -> src/server.js
     ```
 
  ## - "/join" Join
-   - src/globalRouter.js
+   ###  src/globalRouter.js
     ```JavaScript
     const handleJoin = (req, res) => res.send("Join");
     globalRouter.get("/join", handleJoin);
     ```
  ## - "/login" Login
-   - src/globalRouter.js
+   ###  src/globalRouter.js
     ```JavaScript
     const handleLogin = (req, res) => res.send("Login");
     globalRouter.get("/login", handleLogin);
     ```
  ## - "/search" Search
-   - src/globalRouter.js
+   ###  src/globalRouter.js
     ```JavaScript
     const handleSearch = (req, res) => res.send("Search");
     globalRouter.get("/search", handleSearch);
