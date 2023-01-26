@@ -1,7 +1,8 @@
 # wetube
-## 빨강's wetube v0.0.3
+## 빨강's wetube v0.0.4
 ## Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
 
+### 0.0.4 Unused Database (Fake Database)
 ### 0.0.3 pug + MVP CSS - 2023.01.26 // "-" 대한 README.md 기능확인 동그라미 점으로 표시됨
 ### 0.0.2 rout - 2023.01.26 // ">" 대한 README.md 기능확인 ">"이후의 글은 왼쪽에 줄이 생김
 ### 0.0.1 Default Express - 2023.01.26
@@ -67,16 +68,19 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
 ### HTML을 위한 pug설치
 ### npm i pug
 
+### Express는 기본적으로 form을 받을 수 없음
+### server.js에 app.use(express.urlencoded({ extended: true })); 추가로 form을 받을 수 있게됨
+
 
 # 1.사용자 인증(로그인 / 계정 만들기)
  ## - "/" home
    ### /
-    ```JavaScript
+    ```javascript
     const handleHome = (req, res) => res.send("Home");
     app.use("/", handleHome);
     ```
    ### Middleware
-    ```JavaScript
+    ```javascript
     const middleware = (req, res) =>{
         next();
     }
@@ -84,7 +88,7 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
     app.use("/", middleware, handleHome);
     ```
    ### 라우터
-    ```JavaScript
+    ```javascript
     const userRouter = express.Router();
     const handleEditUser = (req, res) => res.send("Edit User");
     userRouter.get("/edit", handleEditUser);
@@ -94,7 +98,7 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
    ###  src/videoRouter.js
    ###  src/userRouter.js
 
-    ```JavaScript
+    ```javascript
     import express from "express";
     const userRouter = express.Router();
     const handleEditUser = (req, res) => res.send("Edit User");
@@ -104,26 +108,26 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
 
    ### 각 컨트롤별 get메소드 추가
 
-    ```JavaScript
+    ```javascript
     const handleJoin = (req, res) => res.send("Join");
     globalRouter.get("/join", handleJoin);
     ```
 
  ## - "/join" Join
    ###  src/globalRouter.js
-    ```JavaScript
+    ```javascript
     const handleJoin = (req, res) => res.send("Join");
     globalRouter.get("/join", handleJoin);
     ```
  ## - "/login" Login
    ###  src/globalRouter.js
-    ```JavaScript
+    ```javascript
     const handleLogin = (req, res) => res.send("Login");
     globalRouter.get("/login", handleLogin);
     ```
  ## - "/search" Search
    ###  src/globalRouter.js
-    ```JavaScript
+    ```javascript
     const handleSearch = (req, res) => res.send("Search");
     globalRouter.get("/search", handleSearch);
     ```
@@ -168,15 +172,15 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
 
 또 코드 블럭 코드(```) 시작점에 사용하는 언어를 선언하여 문법 강조가 가능하다. 아래 표가 코드블록에서 사용가능한 언어이다.
 
-언어	Markdown	언어	Markdown
-Bash	bash	JSON	json
-C#	cs	Java	java
-C++	cpp	JavaScript	javascript
-CSS	css	PHP	php
-Diff	diff	Perl	perl
-HTML, XML	html	Python	python
-HTTP	http	Ruby	ruby
-Ini	ini	SQL	sql
+언어	Markdown	언어	    Markdown
+Bash	bash	    JSON	    json
+C#	    cs	        Java	    java
+C++	    cpp	        JavaScript	javascript
+CSS	    css	        PHP	        php
+Diff	diff	    Perl	    perl
+HTML,XML	html	Python	    python
+HTTP	http	    Ruby	    ruby
+Ini	    ini	        SQL	        sql
  
 
 만일 python에 대한 코드 블록을 사용하고 싶다면 아래와 같이 사용하면 된다.
