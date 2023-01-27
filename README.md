@@ -1,12 +1,13 @@
 # wetube
-## 빨강's wetube v0.0.4
+## 빨강's wetube v0.0.5
 ## Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
 
-### 0.0.4 Unused Database (Fake Database)
-### 0.0.3 pug + MVP CSS - 2023.01.26 // "-" 대한 README.md 기능확인 동그라미 점으로 표시됨
-### 0.0.2 rout - 2023.01.26 // ">" 대한 README.md 기능확인 ">"이후의 글은 왼쪽에 줄이 생김
-### 0.0.1 Default Express - 2023.01.26
-### 0.0.0 init - 2023.01.26
+### v0.0.5 MongoDB CRUD
+### v0.0.4 - 2023.01.26 - Unused Database (Fake Database)
+### v0.0.3 - 2023.01.26 - pug + MVP CSS6 // "-" 대한 README.md 기능확인 동그라미 점으로 표시됨
+### v0.0.2 - 2023.01.26 - rout // ">" 대한 README.md 기능확인 ">"이후의 글은 왼쪽에 줄이 생김
+### v0.0.1 - 2023.01.26 - Default Express
+### v0.0.0 - 2023.01.26 - init 
 
 1.사용자 인증(로그인 / 계정 만들기)
  - "/" home
@@ -71,66 +72,73 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
 ### Express는 기본적으로 form을 받을 수 없음
 ### server.js에 app.use(express.urlencoded({ extended: true })); 추가로 form을 받을 수 있게됨
 
+### Mongoose install
+### npm i mongoose
+
+### Windows 에서 Mogodb는 mongosh를 받아 설치후 path등록 필요
+### mongoose.connect전에 mongoose.set('strictQuery',true); 등록 필요
+### mongoose.connect의 주소가 localhost로 되어있으면 접속이 안되어서 127.0.0.1:27017/~ 로 변경필요
+
 
 # 1.사용자 인증(로그인 / 계정 만들기)
  ## - "/" home
    ### /
-    ```javascript
+```javascript
     const handleHome = (req, res) => res.send("Home");
     app.use("/", handleHome);
-    ```
+```
    ### Middleware
-    ```javascript
+```javascript
     const middleware = (req, res) =>{
         next();
     }
     const handleHome = (req, res) => res.send("Home");
     app.use("/", middleware, handleHome);
-    ```
+```
    ### 라우터
-    ```javascript
+```javascript
     const userRouter = express.Router();
     const handleEditUser = (req, res) => res.send("Edit User");
     userRouter.get("/edit", handleEditUser);
-    ```
+```
    ###  각 라우터마다 파일생성
    ###  src/globalRouter.js
    ###  src/videoRouter.js
    ###  src/userRouter.js
 
-    ```javascript
+```javascript
     import express from "express";
     const userRouter = express.Router();
     const handleEditUser = (req, res) => res.send("Edit User");
     userRouter.get("/edit", handleEditUser);
     export default userRouter;
-    ```
+```
 
    ### 각 컨트롤별 get메소드 추가
 
-    ```javascript
+```javascript
     const handleJoin = (req, res) => res.send("Join");
     globalRouter.get("/join", handleJoin);
-    ```
+```
 
  ## - "/join" Join
    ###  src/globalRouter.js
-    ```javascript
+```javascript
     const handleJoin = (req, res) => res.send("Join");
     globalRouter.get("/join", handleJoin);
-    ```
+```
  ## - "/login" Login
    ###  src/globalRouter.js
-    ```javascript
+```javascript
     const handleLogin = (req, res) => res.send("Login");
     globalRouter.get("/login", handleLogin);
-    ```
+```
  ## - "/search" Search
    ###  src/globalRouter.js
-    ```javascript
+```javascript
     const handleSearch = (req, res) => res.send("Search");
     globalRouter.get("/search", handleSearch);
-    ```
+```
 
 # 2.프로필 편집 / 암호 변경
  ## - "users/edit" Edit user

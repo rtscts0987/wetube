@@ -1,0 +1,14 @@
+extends base
+include mixins/video
+
+block content
+    if videos.length > 0
+        div
+            each video in videos 
+                +video(video)
+    else
+        h2 No Videos
+
+    form(method="GET")
+        input(type="text" name="keyword" placeholder="keyword")
+        input(type="submit" value="Search")

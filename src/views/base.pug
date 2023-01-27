@@ -5,10 +5,10 @@ html(lang="ko")
         link(rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css")
     body 
         header
-            if fakeUser.loggedIn 
-                small Welcome #{fakeUser.username}
-            else
-                small Not Logged In
+            //- if fakeUser.loggedIn 
+            //-     small Welcome #{fakeUser.username}
+            //- else
+            //-     small Not Logged In
             nav 
                 ul 
                     li 
@@ -21,12 +21,12 @@ html(lang="ko")
                         a(href="/search") Search
                     li
                         a(href="/users") Users
-                    if fakeUser.loggedIn
-                        li
-                            a(href="/logout") Log-Out
-                    else
-                        li
-                            a(href="/login") Log-In
+                    //- if fakeUser.loggedIn
+                    //-     li
+                    //-         a(href="/logout") Log-Out
+                    //- else
+                    //-     li
+                    //-         a(href="/login") Log-In
             h1=pageTitle
         main
             block content
