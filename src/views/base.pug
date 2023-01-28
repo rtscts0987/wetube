@@ -19,10 +19,16 @@ html(lang="ko")
                         a(href="/videos/upload") Upload
                     li 
                         a(href="/search") Search
-                    li
-                        a(href="/login") Login
-                    li
-                        a(href="/join") Join
+                    if loggedIn
+                        li
+                            a(href="/users/edit") #{loggedInUser.name} Edit Profile
+                        li
+                            a(href="/users/logout") Log-Out
+                    else
+                        li
+                            a(href="/login") Login
+                        li
+                            a(href="/join") Join
                     //- if fakeUser.loggedIn
                     //-     li
                     //-         a(href="/logout") Log-Out

@@ -52,7 +52,10 @@ export const postLogin = async (req, res) => {
             pageTitle,
             errorMessage: "Error : Wrong password.",
         });
-    }    
+    }
+    req.session.loggedIn = true;
+    req.session.user = user;
+    
     res.redirect("/");
 
 }

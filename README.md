@@ -2,6 +2,7 @@
 ## 빨강's wetube v0.0.5
 ## Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
 
+### v0.0.7 - 2023.01.28 - Express Session
 ### v0.0.6 - 2023.01.27 - MongoDB User Account
 ### v0.0.5 - 2023.01.27 - MongoDB CRUD
 ### v0.0.4 - 2023.01.26 - Unused Database (Fake Database)
@@ -79,6 +80,9 @@ npm i @babel/core @babel/node @babel/preset-env --save-dev
 ### Windows 에서 Mogodb는 mongosh를 받아 설치후 path등록 필요
 ### mongoose.connect전에 mongoose.set('strictQuery',true); 등록 필요
 ### mongoose.connect의 주소가 localhost로 되어있으면 접속이 안되어서 127.0.0.1:27017/~ 로 변경필요
+
+### Session -> Express-session
+### npm i express-session
 
 
 # 1.사용자 인증(로그인 / 계정 만들기)
