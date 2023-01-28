@@ -2,7 +2,8 @@
 ## 빨강's wetube v0.0.5
 ## Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
 
-### v0.0.5 MongoDB CRUD
+### v0.0.6 - 2023.01.27 - MongoDB User Account
+### v0.0.5 - 2023.01.27 - MongoDB CRUD
 ### v0.0.4 - 2023.01.26 - Unused Database (Fake Database)
 ### v0.0.3 - 2023.01.26 - pug + MVP CSS6 // "-" 대한 README.md 기능확인 동그라미 점으로 표시됨
 ### v0.0.2 - 2023.01.26 - rout // ">" 대한 README.md 기능확인 ">"이후의 글은 왼쪽에 줄이 생김
