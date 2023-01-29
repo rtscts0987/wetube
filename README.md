@@ -1,7 +1,10 @@
 # wetube
-## 빨강's wetube v0.0.5
+## 빨강's wetube v0.1.0
 ## Wetube Clone built using NodeJS, Express, Mongo and ES6 💖💖💖
 
+### v0.1.0 - 2023.01.29 - heroku upload first!
+### v0.0.9 - 2023.01.29 - oAuth Login (Github)
+### v0.0.8 - 2023.01.28 - Express Session MongoStore
 ### v0.0.7 - 2023.01.28 - Express Session
 ### v0.0.6 - 2023.01.27 - MongoDB User Account
 ### v0.0.5 - 2023.01.27 - MongoDB CRUD

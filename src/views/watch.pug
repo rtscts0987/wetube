@@ -6,6 +6,11 @@ block content
         small=video.createdAt 
     //- h2 watch
     //- h3 #{video.views} #{video.views === 1 ? "view" : "views"}
+    //- video(src=`/uploads/${video.file}`, controls) 
+    div
+        video(controls width="720px" src="https://serranoarevalo.github.io/notflix/9bfd1023900e31286103369c803c7ee9.ogv")
+
+        br
     a(href=`${video.id}/edit`) Edit Video &rarr;
     br
     a(href=`${video.id}/delete`) Delete Video &rarr;
